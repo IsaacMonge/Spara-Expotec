@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+@import url(../../C-\ Css/menu.css);
+
+
+html,body{
+    height: 100%;
+}
+
+body {
+    /*
+    background: url(images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: linear-gradient(147deg, #976eda 0%, #5486d1 84%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    28a7456e
+    */
+    background-image: linear-gradient(to right top, #3d7c3f, #48934b, #54ab57, #60c363, #6ddc6f);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.3;
+}
+
+#cuerpoForo textarea{
+    background-color:rgba(53, 49, 49, 0.26) ;
+    color:white;
+    padding: 25px;
+    width: 90%;
+    margin-bottom: 5vh;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0;
+}
+
+#cuerpoForo{
+color: #ffffff;
+    margin-left: 5%;
+    margin-top: 15vh
+}
+
+#cuerpoForo textarea:focus{
+    border: 2px solid white;
+    outline: none;
+    padding: 25px;
+}
+
+.titulonc{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#ptitutc{
+    margin-top: 50px !important;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: -9vh;
+    margin-left: 10vh;
+    color: #ffffff;
+}
+
+@media(max-width:600px){
+
+    #ptitutc{
+        font-size: 30px;
+        margin-bottom: -10vh;
+        margin-left: 6%;
+    }
+
+    #cuerpoForo textarea{
+        width: 80%;
+    }
+
+    .titulonc{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    #cuerpo {
+        margin-top: 125px !important;
+    }
+    
+    #cuerpoForo textarea{
+        margin-bottom: 5vh;
+    }
+}
