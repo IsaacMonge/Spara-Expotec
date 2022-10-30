@@ -1,0 +1,17 @@
+<div id="cuerpoForo">
+  <div class="">
+    <label for="title" class="titulonc">Título</label> <br>
+    <textarea required value="<%= article.title %>" type="text" name="title" id="title" class=""></textarea>
+  </div>
+  <div class="">
+    <label for="description" class="titulonc">Descripcion</label> <br>
+    <textarea name="description" id="description" class=""><%= article.description %></textarea>
+  </div>
+  <div class="">
+    <label for="markdown" class="titulonc">Comentario</label> <br>
+    <textarea required name="markdown" id="markdown" class=""><%= article.markdown %></textarea>
+  </div>
+
+  <a href="/" class="btn btn-secondary">Cancelar</a>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</div>

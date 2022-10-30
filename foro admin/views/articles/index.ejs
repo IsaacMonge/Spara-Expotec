@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/css/indexForo.css" type="text/css">
+  <link rel="icon" href="/registro/D- Imágenes/sparapng.png">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Foro Admin</title>
+</head>
+<body>
+  <header>
+    <h1 id="tituloMenu" onclick=inicio()>Spara  <i class="fa fa-leaf fa-lg"></i></h1>
+    <div id="menuOpciones">
+        <input type="checkbox" name="" id="menu_bar">
+        <label for="menu_bar" id="icon_menu"><i class="fa fa-bars fa-lg"></i></label>
+        <nav class="menu">
+            <a id="llamarinicio">Inicio</a>
+            <a id="llamarbot">ChatBot</a>
+            <a id="llamarinfo">Información</a>
+            <a id="llamarcentro">Centros</a>
+            <a id="llamartips">Tips</a>
+            <a id="llamarforo">Foro</a>
+            <a id="llamarcontactos">Nuestro Proyecto</a>
+            <a id="llamarperfil">Perfil</a>
+        </nav>
+    </div>
+  </header>
+
+  <div id="cuerpo">
+
+    <div id="infoinicial">
+        <p class="titulos">Foro</p>
+        <p class="parrafinicial">Nos <b>importa</b> mucho tu <b>opinión</b> y tus <b>consejos</b>, estamos <b>abiertos</b> a cualquier tipo  <br>
+                                de <b>sugerencia</b> que tengas para nuestra <b>página</b> o cualquier <b>información</b> <br>
+                                 que gustes <b>compartir</b>. </p>
+    </div> 
+    
+    <div id="cajaComentarios">
+
+
+
+        
+        <a href="/articles/new" class="btn btn-success" id="btncoment">Nuevo Comentario</a>
+    
+        <% articles.forEach(article => { %>
+          <div class="comentarios">
+            <div class="card-body">
+              <p class=""><%= article.title %></p>
+              <p class="">
+                <%= article.createdAt.toLocaleDateString() %>
+              </p>
+              <p class=""><%= article.description %></p>
+              <a href="articles/<%= article.slug %>" class="btn btn-primary">Leer más</a>
+              <a href="articles/edit/<%= article.id %>" class="btn btn-info">Editar</a>
+              <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+
+        <div id="espacioAbajo"></div>
+
+    </div>
+
+  <script>
+    document.getElementById("llamarinicio").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/inicio.html");
+    })
+    document.getElementById("llamarbot").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/bot.html");
+    })
+    document.getElementById("llamarinfo").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/info.html");
+    })
+    document.getElementById("llamarcentro").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/centros.html");
+    })
+    document.getElementById("llamartips").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/tips.html");
+    })
+    document.getElementById("llamarcontactos").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/contactos.html");
+    })
+    document.getElementById("llamarperfil").addEventListener('click',function(e){
+      e.preventDefault();
+      window.location.replace("http://localhost:8080/A-%20Html/perfil.html");
+    })
+  </script>
+
+
+  </div>
+</body>
+</html>
